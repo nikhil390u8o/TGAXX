@@ -1,29 +1,29 @@
 # Use a lightweight Python base image
 FROM python:3.10-slim
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
 # Install system dependencies
-# sqlite3 is needed for database management
-# rm and other utils are usually present in slim, but we ensure basic tools
-RUN apt-get update && apt-get install -y \
+# We add gcc and python3-dev to compile C extensions like tgcrypto
+RUN apt-get update && apt-get install -y --no-install-recommends \
     sqlite3 \
+    gcc \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the requirements file and install Python dependencies
+# Copy requirements and install
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code
+# Copy the rest of the application
 COPY . .
 
-# Create the sessions directory to ensure it exists
+# Ensure sessions directory exists
 RUN mkdir -p sessions
 
-# Set environment variables (optional, but good practice)
+# Set environment variables
 ENV PYTHONUNBUFFERED=1
 
-# Command to run your bot
-# Replace 'main.py' with the actual name of your python file
+# Run the bot (Ensure your filename is correct, e.g., main.py)
 CMD ["python", "main.py"]
