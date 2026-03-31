@@ -37,9 +37,7 @@ bot = Client(
 login_data = {}
 user_deposits = {}
 
-os.system("rm TGKingRobot.session ")
-os.system("rm TGKingRobot.session-journal ")
-os.system("rm database.db")
+
 
 # ================= DATABASE SETUP =================
 
