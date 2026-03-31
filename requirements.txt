@@ -1,6 +1,3 @@
 pyrogram
-aiohttp
-sqlite3
 tgcrypto
-asyncio
-
+aiohttp
