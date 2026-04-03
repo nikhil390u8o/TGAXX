@@ -15,15 +15,15 @@ from pyrogram.errors import RPCError, UserIsBlocked, FloodWait
 API_ID = 29112886
 API_HASH = "ce582d4fab1b31423b672046359056b4"
 BOT_TOKEN = "8748944729:AAESwFP6f10NLfIi9lDptTNfcRlEbFH-2cQ"
-ADMIN_ID = 7450385463
+ADMIN_ID = "8748944729:AAHG5Rxmuh1NrBg7dELW9_IAtT7cTX8mRfo"
 MERCHANT_KEY = "WHQYNJ64618712357090"
-LOG_CHANNEL_ID = -1003702428171
+LOG_CHANNEL_ID = -1002635720348
 DEPOSIT_LOG_ID = -1003592661456
 SPAM_APPROVAL = {}
 
 # --- FORCE JOIN CONFIG ---
 FORCE_JOIN_CHANNELS = [
-    {"username": "axx_log", "link": "https://t.me/axx_log"},
+    {"username": "axx_log", "link": "https://t.me/log_tgx"},
     {"username": "sxypndu", "link": "https://t.me/sxypndu"},
     {"username": "sxyaru", "link": "https://t.me/sxyaru"},
 ]
