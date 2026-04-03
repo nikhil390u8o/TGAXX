@@ -241,7 +241,7 @@ async def support_h(c, m):
 async def deposit_init(c, m):
     uid = m.from_user.id
 
-    upi_id = "paytm.s1oplq4@pty"
+    upi_id = "nikhil-bby@fam"
     ref_id = f"REF{random.randint(1000, 9999)}"
 
     upi_link = f"upi://pay?pa={upi_id}&pn=TGKing&tn={ref_id}"
