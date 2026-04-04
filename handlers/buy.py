@@ -7,7 +7,7 @@ from database import get_user_data, get_country_price, get_db, update_user_stats
 
 def register_buy(bot):
 
-    @bot.on_message(filters.regex("Buy Account") & filters.private)
+    @bot.on_message(filters.regex("Buy Account") & filters.private | filters.group)
     async def buy_acc_start(c, m):
         uid = m.from_user.id
 
