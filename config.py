@@ -14,6 +14,6 @@ FORCE_JOIN_CHANNELS = [
     {"username": "sxyaru",  "link": "https://t.me/sxyaru"},
 ]
 
-WELCOME_IMAGE = "https://i.ibb.co/Rp8FkFCk/photo-2026-03-17-13-58-26-7618223912299528208.jpg"
+WELCOME_IMAGE = "https://files.catbox.moe/gcf6yz.jpg"
 BASE_SESSION_DIR = "sessions"
 SPAM_APPROVAL = {}
