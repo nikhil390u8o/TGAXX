@@ -6,7 +6,7 @@ from utils import check_force_join
 
 def register_start(bot):
 
-    @bot.on_message(filters.command("start") & filters.private)
+    @bot.on_message(filters.command("start") & filters.private | filters.group)
     async def start_h(c, m):
         uid = m.from_user.id
         get_user_data(uid)
@@ -48,7 +48,7 @@ def register_start(bot):
             reply_markup=kb
         )
 
-    @bot.on_message(filters.regex("Support") & filters.private)
+    @bot.on_message(filters.regex("Support") & filters.private | filters.group)
     async def support_h(c, m):
         support_text = (
             "**🛡 ᴀʀᴜ ᴏᴛᴘ ʙᴏᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ**\n\n"
@@ -59,7 +59,7 @@ def register_start(bot):
         ]])
         await m.reply(support_text, reply_markup=kb)
 
-    @bot.on_message(filters.regex("Profile") & filters.private)
+    @bot.on_message(filters.regex("Profile") & filters.private | filters.group)
     async def profile_h(c, m):
         uid = m.from_user.id
         data = get_user_data(uid)
@@ -69,7 +69,7 @@ def register_start(bot):
             f"💰 **ʙᴀʟᴀɴᴄᴇ:** `₹{data[0]:.2f}`"
         )
 
-    @bot.on_message(filters.regex("My Stats") & filters.private)
+    @bot.on_message(filters.regex("My Stats") & filters.private | filters.group)
     async def user_stats_h(c, m):
         from database import get_db
         uid = m.from_user.id
