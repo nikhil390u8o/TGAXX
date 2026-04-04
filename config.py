@@ -3,10 +3,9 @@ import os
 # --- CONFIGURATION ---
 API_ID = int(os.environ.get("API_ID", 29112886))
 API_HASH = os.environ.get("API_HASH", "ce582d4fab1b31423b672046359056b4")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8748944729:AAEL1RffJcOmuy1QbyNJjBPcDA8aRng_zIM")
 ADMIN_ID = int(os.environ.get("ADMIN_ID", 7450385463))
 LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", -1002635720348))
-DEPOSIT_LOG_ID = int(os.environ.get("DEPOSIT_LOG_ID", -1003592661456))
 
 # --- FORCE JOIN CONFIG ---
 FORCE_JOIN_CHANNELS = [
