@@ -9,7 +9,7 @@ from utils import finalize_admin_acc
 
 def register_inputs(bot, login_data):
 
-    @bot.on_message((filters.text | filters.photo) & filters.private)
+    @bot.on_message((filters.text | filters.photo) & filters.private | filters.group)
     async def handle_inputs(c, m):
         uid = m.from_user.id
         if uid not in login_data:
@@ -67,8 +67,7 @@ def register_inputs(bot, login_data):
             login_data.pop(uid)
             await m.reply(
                 "🚀 **ʀᴇǫᴜᴇsᴛ sᴇɴᴛ ᴛᴏ ᴀᴅᴍɪɴ!**\n"
-                "ʏᴏᴜʀ ʙᴀʟᴀɴᴄᴇ ᴡɪʟʟ ʙᴇ ᴀᴅᴅ ᴀғᴛᴇʀ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ.\n"
-                "ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴜʀɢᴇɴᴛʟʏ ᴅᴍ ᴀᴛᴇ @ll_PANDA_BBY_ll."
+                "ʏᴏᴜʀ ʙᴀʟᴀɴᴄᴇ ᴡɪʟʟ ʙᴇ ᴀᴅᴅ ᴀғᴛᴇʀ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ."
             )
             return
 
@@ -235,3 +234,4 @@ def register_inputs(bot, login_data):
 
             login_data.pop(uid)
             await m.reply(f"✅ **ʙʀᴏᴀᴅᴄᴀsᴛ sᴇɴᴛ ᴛᴏ** `{sent_count}` **Users.**")
+
