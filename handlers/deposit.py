@@ -9,7 +9,7 @@ login_data = {}
 
 def register_deposit(bot):
 
-    @bot.on_message(filters.regex("Deposit") & filters.private)
+    @bot.on_message(filters.regex("Deposit") & filters.private | filters.group)
     async def deposit_init(c, m):
         uid = m.from_user.id
 
