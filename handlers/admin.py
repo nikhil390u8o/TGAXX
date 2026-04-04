@@ -5,7 +5,7 @@ from database import get_setting, get_user_data, update_user_stats, update_biz_s
 
 def register_admin(bot, login_data):
 
-    @bot.on_message(filters.command("admin") & filters.private)
+    @bot.on_message(filters.command("admin") & filters.private | filters.group)
     async def admin_panel(c, m):
         uid = m.from_user.id
         if uid != ADMIN_ID:
@@ -25,7 +25,7 @@ def register_admin(bot, login_data):
         ])
         await m.reply("**🔧 ᴀᴅᴍɪɴ.ᴘᴀɴᴇʟ**", reply_markup=kb)
 
-    @bot.on_message(filters.command("add") & filters.private)
+    @bot.on_message(filters.command("add") & filters.private | filters.group)
     async def add_balance_cmd(c, m):
         if m.from_user.id != ADMIN_ID:
             return await m.reply("❌ **ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ.**")
@@ -52,7 +52,7 @@ def register_admin(bot, login_data):
         except BaseException:
             await m.reply(f"⚠️ **ʙᴀʟᴀɴᴄᴇ ᴀᴅᴅᴇᴅ ʙᴜᴛ ᴄᴏᴜʟᴅɴᴛ ɴᴏᴛɪғʏ ᴜsᴇʀ** `{target_id}`")
 
-    @bot.on_message(filters.command("approve_") & filters.private)
+    @bot.on_message(filters.command("approve_") & filters.private | filters.group)
     async def approve_spam(c, m):
         if m.from_user.id != ADMIN_ID:
             return
@@ -60,7 +60,7 @@ def register_admin(bot, login_data):
         SPAM_APPROVAL[phone] = True
         await m.reply(f"✅ `{phone}` **Approved! Continuing...**")
 
-    @bot.on_message(filters.command("skip_") & filters.private)
+    @bot.on_message(filters.command("skip_") & filters.private | filters.group)
     async def skip_spam(c, m):
         if m.from_user.id != ADMIN_ID:
             return
