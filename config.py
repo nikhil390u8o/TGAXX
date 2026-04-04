@@ -1,0 +1,20 @@
+import os
+
+# --- CONFIGURATION ---
+API_ID = int(os.environ.get("API_ID", 29112886))
+API_HASH = os.environ.get("API_HASH", "ce582d4fab1b31423b672046359056b4")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+ADMIN_ID = int(os.environ.get("ADMIN_ID", 7450385463))
+LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", -1002635720348))
+DEPOSIT_LOG_ID = int(os.environ.get("DEPOSIT_LOG_ID", -1003592661456))
+
+# --- FORCE JOIN CONFIG ---
+FORCE_JOIN_CHANNELS = [
+    {"username": "log_tgx", "link": "https://t.me/log_tgx"},
+    {"username": "sxypndu", "link": "https://t.me/sxypndu"},
+    {"username": "sxyaru",  "link": "https://t.me/sxyaru"},
+]
+
+WELCOME_IMAGE = "https://i.ibb.co/Rp8FkFCk/photo-2026-03-17-13-58-26-7618223912299528208.jpg"
+BASE_SESSION_DIR = "sessions"
+SPAM_APPROVAL = {}
